@@ -1,0 +1,24 @@
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-Light.ttf");
+}
+
+html, body {
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+
+* {
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+/* CSS media query */
+@media ( min-width : 700px ) {
+	p, li {
+		text-align: justify;
+	}
+}

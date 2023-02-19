@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head}"></head>
+<body class="d-flex flex-column">
+	<header th:replace="~{fragments/layout :: header}"></header>
+	<main class="flex-grow-1">
+		<div class="container my-5">
+			<h2 th:text="${subtitle}"></h2>
+			<div>
+				<p th:text="${result}" class="text-muted"></p>
+			</div>
+		</div>
+	</main>
+	<footer th:replace="~{fragments/layout :: footer}"></footer>
+	<th:block th:insert="~{fragments/layout :: scripts}"></th:block>
+</body>
+</html>

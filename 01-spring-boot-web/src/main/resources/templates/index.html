@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head}"></head>
+<body class="d-flex flex-column">
+	<header th:replace="~{fragments/layout :: header}"></header>
+	<main class="flex-grow-1">
+		<div class="container my-5">
+			<!-- Spring Framework -->
+			<section>
+				<h2 th:text="${title}"></h2>
+				<p>
+					Escrito inicialmente por Rod Johnson, fue lanzado por primera vez en el mes de Junio del año 2003 bajo la licencia
+					<span class="fw-bold">Apache 2.0</span>
+					, siendo una plataforma Java de código abierto. Convirtiéndose desde entonces en el framework más popular para Java empresarial, para crear código de alto rendimiento, liviano y reutilizable. Ya
+					que su finalidad es estandarizar, agilizar, manejar y resolver los problemas que puedan ir surgiendo en el trayecto de la programación.
+				</p>
+				<p>
+					<span class="fw-bold">Spring</span>
+					, ofrece como elemento clave el soporte de infraestructura a nivel de aplicación, brindando un completo modelo tanto para la configuración como para la programación de aplicaciones empresariales
+					desarrolladas bajo Java, sin discriminación en cuanto al despliegue de la plataforma.
+				</p>
+				<p>Todo esto trae consigo una gran ventaja, ya que permite que los equipos de desarrollo puedan enfocarse directamente en la lógica empresarial que requiere la aplicación, haciendo el proceso
+					más corto, rápido y eficaz, ahorrando líneas de código evitando tareas repetitivas.</p>
+				<p>
+					Spring se puede considerar como el padre del los frameworks Java, ya que da soporte a varios frameworks como:
+					<span class="fw-bold">Hibernate, Struts, Tapestry, EJB, JSF</span>
+					, entre otros.
+				</p>
+			</section>
+			<!-- Features -->
+			<section>
+				<h2>Características</h2>
+				Entre las
+				<span class="fw-bold">características de Spring</span>
+				, tenemos las siguientes que ofrecen una cantidad considerable de servicios:
+				<ul>
+					<li>
+						<span class="fw-bold">Tecnologías:</span>
+						como la inyección de dependencias, eventos, recursos, i18n, validación, enlace de datos, conversión de tipo,
+						<span class="fw-bold">SpEL.</span>
+					</li>
+					<li>
+						<span class="fw-bold">Acceso a datos:</span>
+						soporte
+						<span class="fw-bold">DAO, JDBC, ORM, Marshalling XML.</span>
+					</li>
+					<li>
+						<span class="fw-bold">Gestión de transacciones.</span>
+					</li>
+					<li>
+						<span class="fw-bold">Integración:</span>
+						comunicación remota, JMS, JCA, JMX, correo electrónico, tareas, programación, caché.
+					</li>
+					<li>
+						<span class="fw-bold">Pruebas (Testing):</span>
+						simulacro de objetos, el framework TestContext, Spring MVC prueba, WebTestClient.
+					</li>
+					<li>
+						<span class="fw-bold">Programación orientada a aspectos (AOP):</span>
+						permite la implementación de rutinas transversales.
+					</li>
+					<li>
+						MVC
+						<span class="fw-bold">(Modelo Vista Controlador).</span>
+					</li>
+					<li>
+						<span class="fw-bold">Seguridad.</span>
+					</li>
+					<li>
+						<span class="fw-bold">Frameworks web:</span>
+						Spring WebFlux y Spring MVC.
+					</li>
+					<li>
+						<span class="fw-bold">Procesamiento de datos por lotes.</span>
+					</li>
+					<li>
+						<span class="fw-bold">Administración Remota:</span>
+						a través de este módulo se puede configurar la visibilidad y gestión de los objetos Java para la configuración local o remota vía JMX.
+					</li>
+					<li>
+						<span class="fw-bold">
+							Es un framework liviano debido a su implementación
+							<span class="fw-bold">POJO (Plain Old Java Object)</span>
+							, Spring Framework no obliga al programador a heredar ninguna clase ni a implementar ninguna interfaz.
+						</span>
+					</li>
+				</ul>
+				<p>Aunque hay que destacar la siguiente:</p>
+				<ul>
+					<li>
+						<span class="fw-bold">Inyección de Dependencias (Dependency Injection):</span>
+						Al momento de escribir una aplicación Java compleja, las clases de la aplicación deben ser lo más independientes posible de otras clases Java, para aumentar la posibilidad de reutilizarlas y
+						probarlas independientemente de otras clases, mientras se prueban las unidades. Básicamente la inyección de dependencias
+						<span class="fw-bold">(DI)</span>
+						ayuda a unir estas clases y al mismo tiempo mantenerlas
+					</li>
+				</ul>
+			</section>
+			<!-- Benefits of using Spring Framework -->
+			<section>
+				<h2>Beneficios de utilizar Spring Framework</h2>
+				<p>A continuación listamos algunos de los beneficios de implementar Spring Framework:</p>
+				<ul>
+					<li>Spring está organizado de forma modular. A pesar de la cantidad de paquetes y clases que tiene, solo debemos ocuparnos de aquellos que necesitemos para nuestro desarrollo e ignorar el
+						resto.</li>
+					<li>
+						Utiliza algunas de las tecnologías existentes, como varios frameworks
+						<span class="fw-bold">ORM, JEE</span>
+						, temporizadores
+						<span class="fw-bold">Quartz y JDK</span>
+						, frameworks de registro y otras tecnologías de visualización.
+					</li>
+					<li>
+						Probar una aplicación escrita con Spring es un proceso simple, porque el código dependiente del entorno se traslada a este framework. Además, mediante el uso de
+						<span class="fw-bold">JavaBeanstyle</span>
+						, se vuelve más fácil utilizar la inyección de dependencia para hacer pruebas, para ello podemos hacer uso de datos dummies o mocks, para ver las respuestas.
+					</li>
+					<li>
+						El framework web de Spring es un framework
+						<span class="fw-bold">MVC</span>
+						web bien diseñado, que proporciona una excelente alternativa a los frameworks web como Struts u otros frameworks web sobre diseñados o menos populares.
+					</li>
+					<li>
+						Spring proporciona una
+						<span class="fw-bold">API</span>
+						para traducir excepciones específicas de la tecnología (como por ejemplo las generadas por JDBC, Hibernate o JDO) en excepciones consistentes y no verificadas.
+					</li>
+					<li>
+						Los contenedores de
+						<span class="fw-bold">IoC (Inversion of Control)</span>
+						tienden a ser livianos, especialmente cuando se comparan con los Enterprise
+						<span class="fw-bold">JavaBeans (EJB)</span>
+						. Esto es ideal para desarrollar y desplegar aplicaciones en maquinas con memoria y recursos limitados.
+					</li>
+					<li>Spring proporciona una interfaz de gestión de transacciones coherente que puede reducirse a una transacción local (utilizando una única base de datos) y ampliarse a transacciones
+						globales.</li>
+					<li>
+						Permite separar el registro, la auditoría, las transacciones declarativas, la seguridad, el almacenamiento en caché, de la lógica comercial a través de la
+						<span class="fw-bold">AOP (Programación Orientada a Aspectos).</span>
+					</li>
+					<li>
+						Cuenta con
+						<span class="fw-bold">plantillas para diversas tecnologías</span>
+						entre la cuales podemos destacar las siguientes:
+						<span class="fw-bold">JDBC, Hibernate y JPA</span>
+						, de forma tal que no hay necesidad de escribir un código extenso, ya que con estas plantillas simplifica el trabajo en cuanto a los pasos básicos a implementar de estas tecnologías.
+					</li>
+				</ul>
+				<p>
+					La versión actual de Spring es la 6 y la puedes obtener desde su
+					<a href="https://spring.io/projects/spring-framework" target="_blank" class="text-primary text-decoration-none">web oficial</a>
+				</p>
+				<p>
+					Spring cuenta con suficiente documentación en la web y con una gran comunidad, lo que es de gran ayuda si te estás iniciando en este
+					<span class="fw-bold">framework</span>
+					, te aconsejamos acceder a la
+					<a href="https://docs.spring.io/spring-framework/docs/current/reference/html/index.html" target="_blank" class="text-primary text-decoration-none">documentación oficial</a>
+				</p>
+			</section>
+		</div>
+	</main>
+	<footer th:replace="~{fragments/layout :: footer}"></footer>
+	<th:block th:insert="~{fragments/layout :: scripts}"></th:block>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head}"></head>
+<body class="d-flex flex-column">
+	<header th:replace="~{fragments/layout :: header}"></header>
+	<main class="flex-grow-1">
+		<div class="container my-5">
+			<!-- Alert if no users are registered in the system -->
+			<div th:if="${users.isEmpty()}" class="alert alert-info text-center" role="alert">No hay usuarios registrados en el sistema.</div>
+			<!-- User list -->
+			<div th:if="${!users.isEmpty()}" class="table-responsive">
+				<table class="table table-hover caption-top align-middle">
+					<caption th:text="${title}" class="fs-2 text-dark"></caption>
+					<thead class="bg-light">
+						<tr>
+							<th>Nombre</th>
+							<th>Apellidos</th>
+							<th>Teléfono</th>
+							<th>Correo electrónico</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="user: ${users}">
+							<td th:text="${user.name}"></td>
+							<td th:text="${user.surnames}"></td>
+							<td th:if="${user.phone}" th:text="${user.phone}"></td>
+							<td th:if="${user.phone == null}" class="text-info">El usuario no tiene teléfono</td>
+							<td th:if="${user.email}" th:text="${user.email}"></td>
+							<td th:if="${user.email == null}" class="text-info">El usuario no tiene correo electrónico</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+	<footer th:replace="~{fragments/layout :: footer}"></footer>
+	<th:block th:insert="~{fragments/layout :: scripts}"></th:block>
+</body>
+</html>

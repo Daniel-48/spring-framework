@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head}"></head>
+<body class="d-flex flex-column">
+	<header th:replace="~{fragments/layout :: header}"></header>
+	<main class="flex-grow-1">
+		<div class="container my-5">
+			<div class="card col-md-8 col-lg-6">
+				<div class="card-header">
+					<h3 th:text="${title}"></h3>
+				</div>
+				<div class="card-body text-muted">
+					<div>
+						<span class="fw-bold">Nombre:</span>
+						<span th:text="${user.name}"></span>
+					</div>
+					<div>
+						<span class="fw-bold">Apellidos:</span>
+						<span th:text="${user.surnames}"></span>
+					</div>
+					<div>
+						<span class="fw-bold">Teléfono:</span>
+						<span th:if="${user.phone}" th:text="${user.phone}"></span>
+						<span th:if="${user.phone == null}" class="text-info">El usuario no tiene teléfono</span>
+					</div>
+					<div>
+						<span class="fw-bold">Correo electrónico:</span>
+						<span th:if="${user.email}" th:text="${user.email}"></span>
+						<span th:if="${user.email == null}" class="text-info">El usuario no tiene correo electrónico</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer th:replace="~{fragments/layout :: footer}"></footer>
+	<th:block th:insert="~{fragments/layout :: scripts}"></th:block>
+</body>
+</html>

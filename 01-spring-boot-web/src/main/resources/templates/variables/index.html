@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head}"></head>
+<body class="d-flex flex-column">
+	<header th:replace="~{fragments/layout :: header}"></header>
+	<main class="flex-grow-1">
+		<div class="container my-5">
+			<h2 th:text="${subtitle}" class="pb-1"></h2>
+			<div class="list-group col-md-8 col-lg-6">
+				<a th:href="@{/app/variables/string/} + ${'Gael Pompa Ciambrino'}" class="list-group-item">/variables/string/Gael Pompa Ciambrino</a>
+				<a th:href="@{/app/variables/string-number/} + ${'Hola mundo!'} + '/' + ${'20'}" class="list-group-item">/variables/string-number/Hola mundo!/20</a>
+				<a th:href="@{/app/variables/string-date/} + 'Gael Pompa Ciambrino' + '/' + 2022-03-20" class="list-group-item">/variables/string-date/Gael Pompa Ciambrino/2022-03-20</a>
+			</div>
+		</div>
+	</main>
+	<footer th:replace="~{fragments/layout :: footer}"></footer>
+	<th:block th:insert="~{fragments/layout :: scripts}"></th:block>
+</body>
+</html>
