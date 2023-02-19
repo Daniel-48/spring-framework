@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head}"></head>
+<body class="d-flex flex-column">
+	<header th:replace="~{fragments/layout :: header}"></header>
+	<main class="flex-grow-1">
+		<div class="container my-5">
+			<section>
+				<h2 th:text="${object}"></h2>
+				<p>La inversión de control es un principio de software, en el que el control de nuestros objetos es transferido a un contenedor o framework. Delegamos, por lo general, en el framework para que
+					tome el flujo del programa. Este sistema tiene una serie de ventajas tales como:</p>
+				<ul>
+					<li>Desacopla el código.</li>
+					<li>Mayor facilidad a la hora de testear debido a que se pueden probar partes aisladas.</li>
+					<li>Tiene una gran modularidad.</li>
+				</ul>
+				<p>Este sistema, se logra implementando diferentes patrones de diseño como pueden ser:</p>
+				<ul>
+					<li>Patrón estrategia (Strategy Pattern).</li>
+					<li>Patrón Factoría (Factory pattern).</li>
+					<li>Patrón Servicio Localizador (Service Locator Pattern).</li>
+					<li>Inyección de Dependencias (Dependency Injection).</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Inyección de Dependencias (DI)</h2>
+				<p>La inyección de dependencias es un patrón de diseño, que implementa la inversión de control para resolver dependencias; a partir de la cual los objetos definen sus dependencias con otros
+					objetos.</p>
+				<p>Todas estas dependencias, se encuentran en un contenedor, que será el responsable de inyectarlas y crear los bean necesarios, por un proceso que se llama Inversión de Control (IoC).</p>
+				<p>Podríamos definir y resumir este concepto como que la Inyección de Dependencias es el proceso de suministrar una dependencia externa a un componente de software.</p>
+			</section>
+			<section>
+				<h2>El contenedor IoC en Spring</h2>
+				<p>En Spring el contenedor IoC esta representado por la interfaz ApplicationContext, la cual es la responsable de configurarn e instanciar todos los objetos (los beans) y manejar su ciclo de
+					vida.</p>
+				<p>La Inyección de Dependencia en Spring puede ser hecha a través de campos, setters o constructores.</p>
+			</section>
+			<section>
+				<h2>Inyección de Dependencias basada en Constructor</h2>
+				<p>En el caso de la Inyección de Dependencias basada en constructor, el contenedor invocará a un constructor con argumentos en la que cada una representa a una dependencia.</p>
+				<h2>Inyección de Dependencias basada en Setter</h2>
+				<p>La Inyección basada en Setter es parecida a la Inyección basada en constructor con la única diferencia que una vez se crea el objeto se hace un set con los atributos del mismo.</p>
+				<h2>Inyección de Dependencias basada en campos</h2>
+				<p>En el caso de la Inyección de Dependencias (DI) para campos, podemos realizar añadiendo la anotación @Autowired en el campo de la clase de la que queremos su dependencia.</p>
+			</section>
+		</div>
+	</main>
+	<footer th:replace="~{fragments/layout :: footer}"></footer>
+	<th:block th:insert="~{fragments/layout :: scripts}"></th:block>
+</body>
+</html>

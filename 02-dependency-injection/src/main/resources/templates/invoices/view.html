@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head}"></head>
+<body class="d-flex flex-column">
+	<header th:replace="~{fragments/layout :: header}"></header>
+	<main class="flex-grow-1">
+		<div class="container my-5">
+			<h1 th:text="${invoice.description}"></h1>
+			<div>
+				<h3>
+					Cliente:
+					<span th:text="${invoice.customer.name + ' ' + invoice.customer.surnames}" class="text-muted"></span>
+				</h3>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">Producto</th>
+							<th scope="col">Precio</th>
+							<th scope="col">Cantidad</th>
+							<th scope="col">Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="item: ${invoice.items}">
+							<td th:text="${item.product.name}"></td>
+							<td th:text="${#numbers.formatDecimal(item.product.price, 1, 'POINT', 2, 'COMMA') + '€'}"></td>
+							<td th:text="${item.numberOfProducts}"></td>
+							<td th:text="${#numbers.formatDecimal(item.calculateTotalPrice(), 1, 'POINT', 2, 'COMMA') + '€'}" class="elements"></td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>
+					Total:
+					<span id="result"></span>
+				</h3>
+			</div>
+		</div>
+	</main>
+	<footer th:replace="~{fragments/layout :: footer}"></footer>
+	<th:block th:insert="~{fragments/layout :: scripts}"></th:block>
+</body>
+</html>
